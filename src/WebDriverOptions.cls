@@ -157,28 +157,28 @@ Public Function ConstructCapabilities() As Dictionary
         ieOptionsRoot.Add "ignoreProtectedModeSettings", Me.IntroduceFlakinessByIgnoringSecurityDomains
         ieOptionsRoot.Add "ignoreZoomSetting", Me.IgnoreZoomSetting
         
-        alwaysMatchRoot.Add "browserName", "internet explorer"
+        capabilitiesRoot.Add "browserName", "internet explorer"
         alwaysMatchRoot.Add "se:ieOptions", ieOptionsRoot
         capabilitiesRoot.Add "alwaysMatch", alwaysMatchRoot
     Case Me.BrowserType = Edge
         Dim edgeOptionsRoot As New Dictionary
         edgeOptionsRoot.Add "args", EdgeArguments
     
-        alwaysMatchRoot.Add "browserName", "msedge"
+        capabilitiesRoot.Add "browserName", "msedge"
         alwaysMatchRoot.Add "ms:edgeOptions", edgeOptionsRoot
         capabilitiesRoot.Add "alwaysMatch", alwaysMatchRoot
     Case Me.BrowserType = Chrome
         Dim chromeOptionsRoot As New Dictionary
         chromeOptionsRoot.Add "args", ChromeArguments
         
-        alwaysMatchRoot.Add "browserName", "chrome"
+        capabilitiesRoot.Add "browserName", "chrome"
         alwaysMatchRoot.Add "goog:chromeOptions", chromeOptionsRoot
         capabilitiesRoot.Add "alwaysMatch", alwaysMatchRoot
     Case Me.BrowserType = Firefox
         Dim firefoxOptionsRoot As New Dictionary
         firefoxOptionsRoot.Add "args", FirefoxArguments
         
-        alwaysMatchRoot.Add "browserName", "firefox"
+        capabilitiesRoot.Add "browserName", "firefox"
         alwaysMatchRoot.Add "moz:firefoxOptions", firefoxOptionsRoot
         capabilitiesRoot.Add "alwaysMatch", alwaysMatchRoot
     End Select
